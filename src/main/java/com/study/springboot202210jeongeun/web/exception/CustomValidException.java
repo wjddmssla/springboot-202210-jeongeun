@@ -4,13 +4,13 @@ import lombok.Getter;
 
 import java.util.Map;
 
-public class CustomValidException {
+public class CustomValidException extends RuntimeException{
     @Getter
-    private Map<String, String> erromMap;
+    private Map<String, String> errorMap;
 
-    public CustomValidException(map<string, string> errormap) {
+    public CustomValidException(Map<String, String> errorMap) {
         super("Failed validation!!!");
-        this.errormap = errormap;
+        this.errorMap = errorMap;
     }
 
 

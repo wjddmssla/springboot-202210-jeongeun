@@ -35,7 +35,7 @@ public class AccountApiControllerAdvice {
 
     @ExceptionHandler(CustomValidException.class)
     public ResponseEntity<?> validationError(CustomValidException e){
-        return ResponseEntity.badRequest().body(new CMRespDto<>(e.getMessage(), e.getErromMap()));
+        return ResponseEntity.badRequest().body(new CMRespDto<>(e.getMessage(), e.getErrorMap()));
     }
 
 }
