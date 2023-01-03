@@ -20,9 +20,15 @@ public class ValidationAop {
 
     }
 
+    @Pointcut("@annotation(com.study.springboot202210jeongeun.aop.annotation.ValidAspect)")
+    private void annotationPointCut() {}
+
     @Around("executionPointcut()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Object[] args = proceedingJoinPoint.getArgs();
+        for(Object arg : args) {
+            System.out.println(args);
+        }
 
         System.out.println("AOP 작동함!");
 
